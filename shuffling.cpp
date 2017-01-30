@@ -2,23 +2,23 @@
 #include <vector>
 using namespace std;
 class cards{
-	
-	vector<int> DeckVector(52);
 	public:
-};
-/*
-		int CreatMultiDeckVector(int numberofdecks){
+	vector<int> DeckVector{vector<int>(52,0)}; // creating a vector named DeckVector with 52 indexes filled with zeros
+	vector<int>* Deckpointer= &DeckVector; // created a pointer called Deckpointer pointing to vector DeckVector
+		int CreatMultiDeckpointer(int numberofdecks){ // initialized a function that will fill DeckVector with appropriate values
 			int numberofcards= 52 * numberofdecks;
 			if (numberofdecks==1){
 				for (int i=0; i < 52; i++){
- 					DeckVecor[i]=i;
+ 					 Deckpointer[i]=i;
 				}
 			}
-			else{
-				DeckVector.resize(numberofcards);
+}
+};
+			/*else{
+				Deckpointer.resize(numberofcards);
 				for (int a=0; a < numberofdecks; a++){
 					for(int value=0; value < 52; value++){
-						DeckVector[value+ 52*a]= value;
+						Deckpointer[value+ 52*a]= value;
 					}
 				}
 			}
@@ -28,16 +28,16 @@ class cards{
 			for (int preshuffleposition=0; preshuffleposition <numberofcards; preshuffleposition++){
 				if( b <= (preshuffleposition/2)){
 					int postshuffleposition= 2*preshuffleposition -1;
-					int temp=DeckVector[preshuffleposition];
-					DeckVector[preshuffleposition]=DeckVector[postshuffleposition];
-					DeckVector[postshuffleposition]=temp;
+					int temp=Deckpointer[preshuffleposition];
+					Deckpointer[preshuffleposition]=Deckpointer[postshuffleposition];
+					Deckpointer[postshuffleposition]=temp;
 					
 				}
 				else{
 				int postshuffleposition2= 2*preshuffleposition -numberofcards;
-					temp=DeckVector[preshuffleposition];
-					DeckVector[preshuffleposition]=DeckVector[postshuffleposition];
-					DeckVector[postshuffleposition]=temp;	
+					temp=Deckpointer[preshuffleposition];
+					Deckpointer[preshuffleposition]=Deckpointer[postshuffleposition];
+					Deckpointer[postshuffleposition]=temp;	
 				}			
 			}
 		}
@@ -112,7 +112,7 @@ int main()
 		cout << "No Decks to shuffle moron\n";
 		}
 		else{
-			int numberofcards= CreatMultiDeckVector(numberofdecks);
+			int numberofcards= CreatMultiDeckpointer(numberofdecks);
 			FaroShuffle(numberofcards);
 			while(1){
 				int positionvalue=0;
@@ -128,4 +128,4 @@ int main()
 		}
 	} 
 }
-	*/ 
+	*/
